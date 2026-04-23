@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Market</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
+<body onload="init()" class="app">
 
-<body class="app" onload="init()">
+<h2>Market</h2>
 
-<h2 class="pad">Buy Plans</h2>
+<div id="list"></div>
 
-<div id="market"></div>
-
-<div class="bottom">
+<div class="nav">
   <a href="dashboard.html">Home</a>
-  <a href="market.html" class="active">Market</a>
-  <a href="rewards.html">Rewards</a>
-  <a href="team.html">Team</a>
-  <a href="profile.html">Profile</a>
+  <a href="market.html">Market</a>
 </div>
 
 <script src="js/data.js"></script>
@@ -30,6 +19,4 @@ function init(){
   loadMarket();
 }
 </script>
-
 </body>
-</html>
