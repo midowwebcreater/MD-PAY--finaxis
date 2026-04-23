@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Market</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="init()">
+
+<h2>Buy Coins</h2>
+
+<div class="card">
+<p>₹1000 → +₹40 reward</p>
+<button onclick="buy(1000)">Buy</button>
+</div>
+
+<div class="card">
+<p>₹5000 → +₹200 reward</p>
+<button onclick="buy(5000)">Buy</button>
+</div>
+
+<div class="nav">
+<a href="dashboard.html">Wallet</a>
+<a href="market.html">Market</a>
+<a href="rewards.html">Rewards</a>
+<a href="team.html">Team</a>
+<a href="profile.html">Profile</a>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+function init(){
+ checkAuth();
+}
+</script>
+
+</body>
+</html>
