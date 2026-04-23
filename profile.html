@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Profile</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="checkAuth()">
+<body class="app" onload="checkAuth()">
 
-<h2>Profile</h2>
+<h2 class="pad">Profile</h2>
 
 <div class="card">
-<button onclick="logout()">Logout</button>
+  <button onclick="logout()">Logout</button>
 </div>
 
-<div class="nav">
-<a href="dashboard.html">Wallet</a>
-<a href="market.html">Market</a>
-<a href="rewards.html">Rewards</a>
-<a href="team.html">Team</a>
-<a href="profile.html">Profile</a>
+<div class="bottom">
+  <a href="dashboard.html">Home</a>
+  <a href="market.html">Market</a>
+  <a href="rewards.html">Rewards</a>
+  <a href="team.html">Team</a>
+  <a href="profile.html" class="active">Profile</a>
 </div>
 
 <script src="js/data.js"></script>
