@@ -1,34 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>BG Cash Login</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MD PAY</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="center">
+<body class="center dark">
 
-<div class="card login">
-<h2>BG Cash</h2>
+<div class="card glass w360">
+  <h2 class="center-text">MD PAY</h2>
 
-<input id="user" placeholder="Username">
-<input id="pass" type="password" placeholder="Password">
+  <div class="tabs">
+    <div id="tLogin" class="active" onclick="showLogin()">Login</div>
+    <div id="tSignup" onclick="showSignup()">Signup</div>
+  </div>
 
-<button onclick="doLogin()">Login</button>
+  <!-- LOGIN -->
+  <div id="loginBox">
+    <input id="lUser" placeholder="Username">
+    <input id="lPass" type="password" placeholder="Password">
+    <button class="btn gold" onclick="doLogin()">Login</button>
+    <p class="hint">Demo: user1 / 1234</p>
+  </div>
 
-<p>Demo: user1 / 1234</p>
+  <!-- SIGNUP -->
+  <div id="signupBox" style="display:none;">
+    <input id="sUser" placeholder="Username">
+    <input id="sPass" type="password" placeholder="Password">
+    <button class="btn" onclick="doSignup()">Create Account</button>
+  </div>
 </div>
 
 <script src="js/data.js"></script>
 <script src="js/auth.js"></script>
 
 <script>
-function doLogin(){
- login(
-  document.getElementById("user").value,
-  document.getElementById("pass").value
- );
+function showLogin(){
+  loginBox.style.display="block";
+  signupBox.style.display="none";
+  tLogin.classList.add("active");
+  tSignup.classList.remove("active");
 }
+function showSignup(){
+  loginBox.style.display="none";
+  signupBox.style.display="block";
+  tSignup.classList.add("active");
+  tLogin.classList.remove("active");
+}
+function doLogin(){ login(lUser.value, lPass.value); }
+function doSignup(){ register(sUser.value, sPass.value); showLogin(); }
 </script>
 
 </body>
