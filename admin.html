@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Admin</title>
-<link rel="stylesheet" href="css/style.css">
-</head>
+<body onload="init()" class="app">
 
-<body class="app" onload="init()">
+<h2>Admin</h2>
 
-<h2 class="pad">Admin Panel</h2>
-
-<div class="card">
-  <button onclick="giveMoney()">Give ₹100 to user1</button>
-</div>
+<button onclick="give()">Give ₹100</button>
 
 <script src="js/data.js"></script>
 <script src="js/auth.js"></script>
 
 <script>
 function init(){
-  const u = getUser();
+  let u = getUser();
   if(!u || u.role!=="admin"){
-    alert("Access Denied");
     location="index.html";
   }
 }
-function giveMoney(){
+function give(){
   let users = JSON.parse(localStorage.getItem("users"));
   users["user1"].balance += 100;
   localStorage.setItem("users", JSON.stringify(users));
-  alert("Done");
+  alert("done");
 }
 </script>
 
 </body>
-</html>
