@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dashboard</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="init()">
+<body class="app" onload="init()">
 
-<h2>Wallet</h2>
-
-<div class="card">
-<h3>Total Balance</h3>
-<h1 class="balance"></h1>
+<div class="header">
+  <span>MD PAY</span>
+  <span>🔔</span>
 </div>
 
-<div class="row">
-<button onclick="go('market.html')">Buy</button>
-<button onclick="go('rewards.html')">Rewards</button>
-<button onclick="go('team.html')">Team</button>
+<div class="balance-box">
+  <div class="small">Total Balance</div>
+  <div class="big balance-text">₹0</div>
+  <div class="small" id="bonusText">Bonus ₹0</div>
 </div>
 
-<div class="nav">
-<a href="dashboard.html">Wallet</a>
-<a href="market.html">Market</a>
-<a href="rewards.html">Rewards</a>
-<a href="team.html">Team</a>
-<a href="profile.html">Profile</a>
+<div class="actions">
+  <div onclick="go('market.html')">Buy</div>
+  <div onclick="go('rewards.html')">Rewards</div>
+  <div onclick="go('team.html')">Invite</div>
+</div>
+
+<div class="banner">🔥 10% Bank | ⚡ 7% UPI Bonus</div>
+
+<div id="recent" class="card"></div>
+
+<div class="bottom">
+  <a href="dashboard.html" class="active">Home</a>
+  <a href="market.html">Market</a>
+  <a href="rewards.html">Rewards</a>
+  <a href="team.html">Team</a>
+  <a href="profile.html">Profile</a>
 </div>
 
 <script src="js/data.js"></script>
@@ -34,8 +43,9 @@
 
 <script>
 function init(){
- checkAuth();
- setBalance();
+  checkAuth();
+  setBalance();
+  renderRecent();
 }
 </script>
 
