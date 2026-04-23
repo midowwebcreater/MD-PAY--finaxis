@@ -1,27 +1,18 @@
 function login(u,p){
   let users = JSON.parse(localStorage.getItem("users"));
+
   if(!users[u] || users[u].password!==p){
     alert("Invalid");
     return;
   }
-  localStorage.setItem("currentUser", u);
-  if(users[u].role==="admin") location="admin.html";
-  else location="dashboard.html";
-}
 
-function register(u,p){
-  if(!u || !p){ alert("Fill details"); return; }
-  let users = JSON.parse(localStorage.getItem("users"));
-  if(users[u]){ alert("User exists"); return; }
-  users[u] = { password:p, balance:0, bonus:0, role:"user" };
-  localStorage.setItem("users", JSON.stringify(users));
-  alert("Signup success");
-}
+  localStorage.setItem("currentUser",u);
 
-function getUser(){
-  let users = JSON.parse(localStorage.getItem("users"));
-  let u = localStorage.getItem("currentUser");
-  return users[u];
+  if(users[u].role==="admin"){
+    location.href="admin.html";
+  } else {
+    location.href="dashboard.html";
+  }
 }
 
 function checkAuth(){
@@ -35,4 +26,7 @@ function logout(){
   location="index.html";
 }
 
-function go(p){ location=p; }
+function getUser(){
+  let users = JSON.parse(localStorage.getItem("users"));
+  return users[localStorage.getItem("currentUser")];
+}
