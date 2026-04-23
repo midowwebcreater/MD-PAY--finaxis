@@ -1,0 +1,11 @@
+{
+  "routes": [
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/dashboard", "dest": "/dashboard.html" },
+    { "src": "/market", "dest": "/market.html" },
+    { "src": "/rewards", "dest": "/rewards.html" },
+    { "src": "/team", "dest": "/team.html" },
+    { "src": "/profile", "dest": "/profile.html" },
+    { "src": "/admin", "dest": "/admin.html" }
+  ]
+}
