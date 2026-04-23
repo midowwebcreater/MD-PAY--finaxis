@@ -1,46 +1,33 @@
-body{
- font-family:Arial;
- background:#f5f7fb;
- margin:0;
-}
+body.dark{ background:#0B0F19; color:#fff; margin:0; font-family:Inter; }
+.center{ display:flex; justify-content:center; align-items:center; height:100vh; }
+.center-text{ text-align:center; }
+.w360{ width:360px; }
 
-.center{
- display:flex;
- justify-content:center;
- align-items:center;
- height:100vh;
-}
+.card{ background:#111827; padding:18px; margin:12px; border-radius:16px; }
+.glass{ background:rgba(255,255,255,0.05); backdrop-filter:blur(12px); }
+input{ width:100%; padding:12px; margin:10px 0; border:none; border-radius:10px; }
+.btn{ padding:12px; width:100%; border:none; border-radius:10px; }
+.gold{ background:#facc15; color:#000; font-weight:600; }
+.hint{ font-size:12px; opacity:.7; }
 
-.card{
- background:#fff;
- padding:20px;
- margin:10px;
- border-radius:15px;
- box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+.tabs{ display:flex; gap:10px; margin-bottom:10px; }
+.tabs div{ flex:1; text-align:center; padding:10px; border-bottom:2px solid transparent; opacity:.7; }
+.tabs .active{ border-color:#22c55e; opacity:1; }
 
-button{
- padding:10px;
- margin:5px;
- border:none;
- background:#22c55e;
- color:white;
- border-radius:10px;
-}
+.app{ background:#f4f6fb; }
+.header{ display:flex; justify-content:space-between; padding:15px; background:#fff; font-weight:600; }
+.balance-box{ margin:15px; padding:20px; border-radius:16px; background:linear-gradient(135deg,#22c55e,#4ade80); color:#fff; }
+.balance-box .big{ font-size:28px; }
+.actions{ display:flex; justify-content:space-around; margin:10px; }
+.actions div{ background:#fff; padding:10px 20px; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,.1); }
 
-input{
- display:block;
- margin:10px 0;
- padding:10px;
- width:100%;
-}
+.banner{ margin:15px; padding:12px; border-radius:12px; background:linear-gradient(90deg,#facc15,#f97316); color:#000; font-weight:600; }
 
-.nav{
- position:fixed;
- bottom:0;
- width:100%;
- display:flex;
- justify-content:space-around;
- background:white;
- padding:10px;
-}
+.market-card{ background:#fff; margin:10px; padding:15px; border-radius:12px; display:flex; justify-content:space-between; }
+
+.bottom{ position:fixed; bottom:0; width:100%; display:flex; justify-content:space-around; background:#fff; padding:10px; }
+.bottom a{ text-decoration:none; color:#888; }
+.bottom .active{ color:#22c55e; }
+
+.pad{ padding:15px; }
+.row-item{ background:#fff; margin:8px 12px; padding:10px; border-radius:10px; }
