@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Panel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body onload="init()">
+<body class="app" onload="init()">
 
-<h2>Admin Panel</h2>
+<h2 class="pad">Admin Panel</h2>
 
 <div class="card">
-<button onclick="giveMoney()">Give ₹100 to user1</button>
+  <button onclick="giveMoney()">Give ₹100 to user1</button>
 </div>
 
 <script src="js/data.js"></script>
@@ -18,17 +19,17 @@
 
 <script>
 function init(){
- let user = getUser();
-
- if(user.role !== "admin"){
-  alert("Access denied");
-  window.location.href="index.html";
- }
+  const u = getUser();
+  if(!u || u.role!=="admin"){
+    alert("Access Denied");
+    location="index.html";
+  }
 }
-
 function giveMoney(){
- users["user1"].balance += 100;
- alert("Added ₹100");
+  let users = JSON.parse(localStorage.getItem("users"));
+  users["user1"].balance += 100;
+  localStorage.setItem("users", JSON.stringify(users));
+  alert("Done");
 }
 </script>
 
